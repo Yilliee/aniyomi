@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="160dp"
+    android:height="90dp"
+    android:viewportWidth="160"
+    android:viewportHeight="90">
+
+    <!-- Background Rectangle -->
+    <path
+        android:fillColor="#2E84BF"
+        android:pathData="M0,0h160v90h-160z"/>
+
+    <!-- Outer Circle (Red) -->
+    <path
+        android:fillColor="#C92824"
+        android:pathData="M80,45m-25,0a25,25 0,1 1,50 0a25,25 0,1 1,-50 0"/>
+
+    <!-- Inner Circle (White) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M80,45m-20.051,0a20.051,20.051 0,1 1,40.102 0a20.051,20.051 0,1 1,-40.102 0"/>
+
+    <!-- Play Icon -->
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M89.998,43.877 l-15.133,-8.736c-0.904,-0.521 -2.032,0.131 -2.032,1.173v17.474c0,1.044 1.13,1.695 2.032,1.173L89.997,46.224c0.904,-0.521 0.904,-1.825 0.001,-2.347z"/>
+</vector>

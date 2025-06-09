@@ -17,8 +17,8 @@ private const val TABLET_UI_MIN_SCREEN_WIDTH_PORTRAIT_DP = 700
 // make sure icons on the nav rail fit
 private const val TABLET_UI_MIN_SCREEN_WIDTH_LANDSCAPE_DP = 600
 
-fun Configuration.isTabletUi(): Boolean {
-    return smallestScreenWidthDp >= TABLET_UI_REQUIRED_SCREEN_WIDTH_DP
+fun Configuration.isTabletUi(context: Context): Boolean {
+    return smallestScreenWidthDp >= TABLET_UI_REQUIRED_SCREEN_WIDTH_DP || isTvBox(context)
 }
 
 // TODO: move the logic to `isTabletUi()` when main activity is rewritten in Compose
@@ -34,7 +34,7 @@ fun Context.prepareTabletUiContext(): Context {
         TabletUiMode.LANDSCAPE -> configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
         TabletUiMode.NEVER -> false
     }
-    if (configuration.isTabletUi() != expected) {
+    if (configuration.isTabletUi(this) != expected) {
         val overrideConf = Configuration()
         overrideConf.setTo(configuration)
         overrideConf.smallestScreenWidthDp = if (expected) {
